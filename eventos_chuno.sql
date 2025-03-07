@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-03-2025 a las 23:16:14
+-- Tiempo de generación: 07-03-2025 a las 03:25:29
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -55,6 +55,14 @@ CREATE TABLE `charlas` (
   `idOrador` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `charlas`
+--
+
+INSERT INTO `charlas` (`idCharla`, `Nombre`, `Institucion`, `idDepartamento`, `idModalidad`, `Fecha`, `Hora`, `LinkReunion`, `Codigo`, `LinkPresentacion`, `Likes`, `Dislikes`, `Estado`, `idOrador`) VALUES
+(2, 'Macrame en forma de michis', 'UPB', 2, 1, '2025-03-14', '20:00:00', 'meet.com', '1234', 'canva.com', 0, 0, 1, 1),
+(3, 'Periodismo Independiente', 'UPB', 2, 2, '2025-04-15', '18:00:00', 'meet.com', '5564', 'canva.com', 0, 0, 1, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -75,8 +83,23 @@ CREATE TABLE `charlasasistentes` (
 
 CREATE TABLE `departamento` (
   `idDepartamento` int(11) NOT NULL,
-  `Departamento` int(11) NOT NULL
+  `Departamento` varchar(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `departamento`
+--
+
+INSERT INTO `departamento` (`idDepartamento`, `Departamento`) VALUES
+(1, 'La Paz'),
+(2, 'Santa Cruz'),
+(3, 'Cochabamba'),
+(4, 'Tarija'),
+(5, 'Chuquisaca'),
+(6, 'Oruro'),
+(7, 'Potosí'),
+(8, 'Pando'),
+(9, 'Beni');
 
 -- --------------------------------------------------------
 
@@ -88,6 +111,14 @@ CREATE TABLE `modalidad` (
   `idModalidad` int(11) NOT NULL,
   `Modalidad` char(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `modalidad`
+--
+
+INSERT INTO `modalidad` (`idModalidad`, `Modalidad`) VALUES
+(1, 'Virtual'),
+(2, 'Presencial');
 
 -- --------------------------------------------------------
 
@@ -101,6 +132,13 @@ CREATE TABLE `orador` (
   `Gmail` varchar(100) NOT NULL,
   `Contrasena` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `orador`
+--
+
+INSERT INTO `orador` (`idOrador`, `Nombre`, `Gmail`, `Contrasena`) VALUES
+(1, 'Santiago Torrez', 'storrez@gmail.com', '12345');
 
 --
 -- Índices para tablas volcadas
@@ -146,6 +184,16 @@ ALTER TABLE `modalidad`
 --
 ALTER TABLE `orador`
   ADD PRIMARY KEY (`idOrador`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `charlas`
+--
+ALTER TABLE `charlas`
+  MODIFY `idCharla` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restricciones para tablas volcadas
