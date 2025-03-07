@@ -1,0 +1,52 @@
+.custom-navbar {
+    background-color: #461E1E !important;
+    font-family: "Inter", sans-serif;
+}
+
+.custom-navbar .navbar-brand {
+    font-family: "Inter", sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    color: #ffffff !important;
+    display: flex;
+    align-items: center;
+}
+
+.custom-navbar .nav-link {
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    color: #ffffff !important;
+    transition: color 0.3s ease-in-out;
+}
+
+.custom-navbar .nav-link:hover {
+    font-family: "Inter", sans-serif;
+    text-decoration: underline;
+}
+
+.login-btn {
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-brand i, .navbar-brand img {
+    margin-right: 20px;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+}
+
+.brand-text {
+    display: block;
+    line-height: 1.2;
+    margin-left: 10px;
+    font-family: "Inter", sans-serif;
+    color: white;
+    font-size: 25px;
+}
+
