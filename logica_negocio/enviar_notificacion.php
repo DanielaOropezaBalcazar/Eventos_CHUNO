@@ -1,8 +1,15 @@
 <?php
-// enviar_correo.php
-require 'mailer.php'; // Incluye la clase Mailer
+
+require 'mailer.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+
+    for ($i=0; $i < total ; $i++) { 
+        
+    }
+
+
     // Recuperar datos del formulario
     $destinatario = $_POST['destinatario'];
     $asunto = $_POST['asunto'];
@@ -16,9 +23,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Redireccionar según el resultado
     if (strpos($resultado, "Error") === false) {
-        echo "Si funciono";
+        echo "No funciono";
     } else {
-        echo "No Funciono"; // Página de error
+        echo "si Funciono"; // Página de error
     }
     exit();
 }

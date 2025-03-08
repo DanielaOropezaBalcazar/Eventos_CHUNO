@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Eventos</title>
+    <link rel="stylesheet" href="styles/añadir-page.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gestión de Eventos</h1>
+        <form method="post" action="../logica_negocio/mailer.php">
+            <div class="form-group">
+                <label for="nombreEvento">Nombre del Evento:</label>
+                <input type="text" id="nombreEvento" name="nombreEvento" value="Conferencia de manzanas anónimas">
+            </div>
+            <div class="form-group">
+                <label for="institucion">Institución:</label>
+                <input type="text" id="institucion" name="institucion" value="Universidad Privada Boliviana 'UPB'">
+            </div>
+            <div class="form-group">
+                <label>Modalidad:</label>
+                <input type="checkbox" id="modalidad" name="modalidad">
+                <label class="checkbox-label" for="modalidad">Modalidad</label>
+            </div>
+            <div class="form-group">
+                <label for="fecha">Fecha:</label>
+                <input type="date" id="fecha" name="fecha" value="2025-02-28">
+            </div>
+            <div class="form-group">
+                <label for="hora">Hora:</label>
+                <input type="time" id="hora" name="hora" value="16:00">
+            </div>
+            <div class="form-group enlaces">
+                <label>Enlaces Externos:</label>
+                <label for="reunion">Reunión:</label>
+                <input type="text" id="reunion" name="reunion" value="https://meet.google.com/cre-mbcs-it!">
+                <label for="codigo">Código:</label>
+                <input type="text" id="codigo" name="codigo" value="wg156i4">
+                <label for="presentacion">Presentación:</label>
+                <input type="text" id="presentacion" name="presentacion" value="https://canva.com">
+            </div>
+            <div class="form-group">
+                <button type="submit">Crear Evento</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
