@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     ];
 
     if ($controller->actualizar($id, $data)) {
-        header("Location: index.php");
+        header("Location: charlas.php");
         exit();
     } else {
         echo "Error al actualizar la charla.";

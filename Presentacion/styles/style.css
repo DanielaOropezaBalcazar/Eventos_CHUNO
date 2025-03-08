@@ -1,0 +1,47 @@
+.charlas-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.charla-card {
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.charla-card:hover {
+    transform: scale(1.05);
+}
+
+.charla-card h3 {
+    margin: 0 0 10px;
+    font-size: 18px;
+}
+
+.charla-card p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.charla-actions {
+    margin-top: 10px;
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: white;
+    background: #007BFF;
+    margin-right: 5px;
+}
+
+.btn.delete {
+    background: #dc3545;
+}
