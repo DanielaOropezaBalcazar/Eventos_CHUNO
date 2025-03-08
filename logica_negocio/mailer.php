@@ -16,7 +16,7 @@ class Mailer {
         $this->mail->Host = 'smtp.gmail.com'; // Servidor SMTP
         $this->mail->SMTPAuth = true;
         $this->mail->Username = 'mauroguitarlml@gmail.com'; // Tu correo
-        $this->mail->Password = 'fqdq zsva piuy iazx'; // Tu contraseña
+        $this->mail->Password = 'uxje emqn afsj sjpx'; // Tu contraseña
         $this->mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Encriptación TLS
         $this->mail->Port = 587; // Puerto SMTP
     }

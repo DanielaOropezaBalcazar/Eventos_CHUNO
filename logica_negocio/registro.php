@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Datos del Usuario</title>
-    <link rel="stylesheet" href="../presentaciòn/styles/styles.css"> <!-- Enlace al archivo CSS -->
-</head>
-<body>
 <?php
 
 // Definimos la clase Usuario
@@ -33,21 +24,9 @@ class Usuario {
     }
 
     // Método para mostrar datos (opcional)
-    // public function mostrarDatos() {
-    //     return "Nombre: $this->nombre <br> Correo: $this->correo <br> Hash de la Contraseña: " . $this->password;
-    // }
-
     public function mostrarDatos() {
-        return '
-        <div class="card">
-            <h2>Información del Usuario</h2>
-            <p><strong>Nombre:</strong> ' . htmlspecialchars($this->nombre) . '</p>
-            <p><strong>Correo:</strong> ' . htmlspecialchars($this->correo) . '</p>
-            <p><strong>Hash de la Contraseña:</strong> <span class="hash">' . htmlspecialchars($this->password) . '</span></p>
-        </div>';
+        return "Nombre: $this->nombre <br> Correo: $this->correo <br> Hash de la Contraseña: " . $this->password;
     }
-
-
 }
 
 // Verificar si el formulario fue enviado
@@ -77,5 +56,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo $usuario->mostrarDatos();
 }
 ?>
-</body>
-</html>

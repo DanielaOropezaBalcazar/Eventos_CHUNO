@@ -16,9 +16,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Redireccionar según el resultado
     if (strpos($resultado, "Error") === false) {
-        echo "Si funciono";
+        echo "No funciono";
     } else {
-        echo "No Funciono"; // Página de error
+        echo "si Funciono"; // Página de error
     }
     exit();
 }
