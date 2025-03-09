@@ -26,5 +26,20 @@ class CharlaController {
     public function eliminar($id) {
         return $this->model->delete($id);
     }
+    
+    //Obtener departamentos
+    public function obtenerDepartamentos() {
+        return $this->model->getDepartamentos();
+    }
+
+    //Obtener modalidades
+    public function obtenerModalidades() {
+        return $this->model->getModalidades();
+    }
+
+    //Obtener oradores
+    public function obtenerOradores() {
+        return $this->model->getOradores();
+    }
 }
 ?>
