@@ -1,17 +1,24 @@
-<!-- CONEXION BASE DE DATOS -->
-
 <?php
-$host = "localhost"; // Cambia esto si usas un servidor remoto
-$usuario = "admin";
-$password = "admin";
-$base_de_datos = "Eventos_CHUNO";
+class Database {
+    private $host = "localhost";
+    private $db_name = "chuno";
+    private $username = "root";
+    private $password = "";
+    public $conn;
 
-$conn = new mysqli($host, $usuario, $password, $base_de_datos);
+    public function getConnection() {
+        $this->conn = null;
+        try {
+            $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $exception) {
+            echo "Error de conexión: " . $exception->getMessage();
+        }
+        return $this->conn;
+    }
 
-// Verificar conexión
-if ($conn->connect_error) {
-    die("Error de conexión: " . $conn->connect_error);
-} else {
-    echo "Conexión exitosa a la base de datos";
+   
 }
-?>
+
+
+
