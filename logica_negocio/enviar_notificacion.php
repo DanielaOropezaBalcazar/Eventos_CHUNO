@@ -11,6 +11,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $asunto = $_POST['asunto'];
     $mensaje = $_POST['mensaje'];
 
+    $mensajeCharla = "h1"; 
+
+
     // Instanciar la clase Mailer
     $mailer = new Mailer();
 

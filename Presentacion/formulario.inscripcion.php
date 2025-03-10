@@ -123,8 +123,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <!-- Campo para el nombre -->
         <div class="container mb-3">
             <div class="row justify-content-center"> <!-- Centra la fila -->
-                <div class="col-sm-6 text-center"> <!-- Centra la columna y su contenido -->
-                    <h1 for="Nombre" class="col-form-label">
+                <div class="col-sm-8 text-center"> <!-- Centra la columna y su contenido -->
+                    <h1 for="Nombre" class=" col-form-label fs-3">
                         <?php echo htmlspecialchars($charla['Nombre']); ?>
                     </h1>
                 </div>
@@ -140,70 +140,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
         </div>
 
+        <!-- Ingresar el correo  -->
         <div class="row mb-3">
-            <label for="LinkReunion" class="col-sm-3 col-form-label">Link Reunión:</label>
+            <label for="idOrador" class="col-sm-3 col-form-label">Ingresa Tu correo:</label>
             <div class="col-sm-9">
-                <input type="text" class="form-control" id="LinkReunion" name="LinkReunion"
-                    value="<?php echo htmlspecialchars($charla['LinkReunion']); ?>">
-            </div>
-        </div>
-
-        <!-- Campo para el código -->
-        <div class="row mb-3">
-            <label for="Codigo" class="col-sm-3 col-form-label">Código:</label>
-            <div class="col-sm-9">
-                <input type="text" class="form-control" id="Codigo" name="Codigo"
-                    value="<?php echo htmlspecialchars($charla['Codigo']); ?>">
-            </div>
-        </div>
-
-        <!-- Campo para el link de presentación -->
-        <div class="row mb-3">
-            <label for="LinkPresentacion" class="col-sm-3 col-form-label">Link Presentación:</label>
-            <div class="col-sm-9">
-                <input type="text" class="form-control" id="LinkPresentacion" name="LinkPresentacion"
-                    value="<?php echo htmlspecialchars($charla['LinkPresentacion']); ?>">
-            </div>
-        </div>
-
-        <!-- Campo para la imagen actual -->
-        <div class="row mb-3">
-            <label for="Imagen" class="col-sm-3 col-form-label">Imagen actual:</label>
-            <div class="col-sm-9">
-                <?php if ($charla['Imagen']): ?>
-                    <img src="../uploads/<?php echo htmlspecialchars($charla['Imagen']); ?>" alt="Imagen de la charla"
-                        style="max-width: 200px;">
-                <?php else: ?>
-                    <p>No hay imagen cargada.</p>
-                <?php endif; ?>
-            </div>
-        </div>
-
-        <!-- Campo para la nueva imagen -->
-        <div class="row mb-3">
-            <label for="Imagen" class="col-sm-3 col-form-label">Nueva imagen:</label>
-            <div class="col-sm-9">
-                <input type="file" class="form-control" id="Imagen" name="Imagen">
-            </div>
-        </div>
-
-        <!-- Combobox para Oradores -->
-        <div class="row mb-3">
-            <label for="idOrador" class="col-sm-3 col-form-label">Orador:</label>
-            <div class="col-sm-9">
-                <select class="form-control" id="idOrador" name="idOrador" required>
-                    <?php foreach ($oradores as $orador): ?>
-                        <option value="<?php echo $orador['idOrador']; ?>" <?php echo ($orador['idOrador'] == $charla['idOrador']) ? 'selected' : ''; ?>>
-                            <?php echo htmlspecialchars($orador['Nombre']); ?>
-                        </option>
-                    <?php endforeach; ?>
-                </select>
+                <input type="email" class="form-control" id="correo-asistente" >
             </div>
         </div>
 
         <!-- Botón de enviar -->
         <div class="d-flex justify-content-end">
-            <button type="submit" class="btn btn-primary">Guardar cambios</button>
+            <button type="submit" class="btn btn-primary">Inscribirme</button>
         </div>
     </form>
 </body>
