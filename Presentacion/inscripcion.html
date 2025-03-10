@@ -15,14 +15,18 @@
         <br>
         <br>
         <br>
-        <form action="../logica_negocio/registro.php" method="POST">
-            <label for="nombre" class="d-block mb-2">Ingrese su correo:</label>
+        <form id="inscripcionForm">
+            <label for="correoInscripcion" class="d-block mb-2">Ingrese su correo:</label>
             <input type="email" id="correoInscripcion" name="correoInscripcion" required class="form-control mb-4">
             <br>
             <br>
             <br>
             <br>
-            <button id="btnInscrip" class="btn btn-success btn-lg px-5">Inscribeme</button>
+            <input type="hidden" id="idCharla" value="1">
+            <button class="btn btn-success btn-lg px-5" type="submit">Inscribeme</button>
     </div>
+
+    <script src="../logica_negocio/logicaInscripcion.js"></script>
+
 </body>
 </html>
