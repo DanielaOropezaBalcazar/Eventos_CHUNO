@@ -29,6 +29,12 @@ $oradores = $controller->obtenerOradores();
 
 // Procesar el formulario de edición
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if ($fecha_seleccionada < $fecha_actual) {
+        echo "<p style='color: red;'>Error: La fecha seleccionada no puede ser anterior a la fecha actual.</p>";
+    } else {
+        echo "<p style='color: green;'>Fecha válida: " . htmlspecialchars($fecha_seleccionada) . "</p>";
+    }
+
     $uploadsDir = '../uploads/'; // Ruta de la carpeta de subidas
 
     // Procesar la subida de la nueva imagen
@@ -141,7 +147,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
         </div>
 
-        <!-- Combobox para Modalidades -->
         <div class="row mb-3">
             <label for="idModalidad" class="col-sm-3 col-form-label">Modalidad:</label>
             <div class="col-sm-9">
@@ -155,15 +160,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
         </div>
 
-        <!-- Campo para la fecha -->
         <div class="row mb-3">
             <label for="Fecha" class="col-sm-3 col-form-label">Fecha:</label>
             <div class="col-sm-9">
-                <input type="date" class="form-control" id="Fecha" name="Fecha" value="<?php echo htmlspecialchars($charla['Fecha']); ?>" required>
+                <input type="date" class="form-control" id="Fecha" name="Fecha" min="<?php echo date('Y-m-d'); ?>" required>
             </div>
         </div>
 
-        <!-- Campo para la hora -->
         <div class="row mb-3">
             <label for="Hora" class="col-sm-3 col-form-label">Hora:</label>
             <div class="col-sm-9">
@@ -171,7 +174,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
         </div>
 
-        <!-- Campo para el link de reunión -->
         <div class="row mb-3">
             <label for="LinkReunion" class="col-sm-3 col-form-label">Link Reunión:</label>
             <div class="col-sm-9">

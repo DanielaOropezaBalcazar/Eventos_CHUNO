@@ -8,6 +8,16 @@ $modalidades = $controller->obtenerModalidades();
 $oradores = $controller->obtenerOradores();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $fecha_seleccionada = $_POST['fecha'];
+    $fecha_actual = date('Y-m-d');
+
+    if ($fecha_seleccionada < $fecha_actual) {
+        echo "La fecha seleccionada no puede ser anterior a la fecha actual.";
+    } else {
+        echo "Fecha válida: " . $fecha_seleccionada;
+    }
+
     $idOrador = $_POST['idOrador'];
 
     if (!$controller->verificarOrador($idOrador)) {
@@ -103,7 +113,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="row mb-3">
             <label for="Fecha" class="col-sm-3 col-form-label">Fecha:</label>
             <div class="col-sm-9">
-                <input type="date" class="form-control" id="Fecha" name="Fecha" required>
+                <input type="date" class="form-control" id="Fecha" min="<?php echo date('Y-m-d'); ?>" name="Fecha" required>
             </div>
         </div>
 
