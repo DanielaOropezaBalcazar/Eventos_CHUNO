@@ -13,8 +13,8 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg custom-navbar">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="../Images/logo.png" alt="Logo" width="90" height="90" class="d-inline-block align-text-top">
+            <a class="navbar-brand" href="../Presentacion/charlas.php">
+                <img src="../Images/logo.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top">
                 <div>
                     <span class="brand-text">Eventos</span>
                     <span class="brand-text">Chuno</span>
@@ -25,8 +25,8 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#" style="font-weight: bold;">Gestión</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Crear Conferencia</a></li>
+                    <li class="nav-item"><a class="nav-link" href="" style="text-decoration:none">Gestión</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../Presentacion/crear.php" style="text-decoration:none">Crear Conferencia</a></li>
                     <li class="nav-item"><a class="nav-link" href="#"></a></li>
                 </ul>
                 <a href="#" class="btn btn-light ms-3 login-btn">Iniciar Sesión</a>

@@ -23,7 +23,7 @@ class CharlaModel {
 
     public function insert($data) {
         $query = "INSERT INTO charlas (Nombre, Institucion, idDepartamento, idModalidad, Fecha, Hora, LinkReunion, Codigo, LinkPresentacion, Imagen, Likes, Dislikes, Estado, idOrador) 
-                  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $this->conn->prepare($query); // Usar $this->conn
         return $stmt->execute($data);
     }

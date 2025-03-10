@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos Finalizados</title>
+    <link rel="stylesheet" href="styles/Gestion_eventos.css">
+    <script src="../logica_negocio/finalizado.js" defer></script>
+    
+</head>
+<body>
+    <header>
+        <div class="logo">Eventos Chuno</div>
+        <nav>
+            <button class="nav-btn">Gestión</button>
+            <button class="nav-btn">Crear Conferencia</button>
+            <button class="nav-btn perfil">Perfil</button>
+        </nav>
+    </header>
+
+    <input type="hidden" id="idOrador" value="1">
+
+    <div class="container">
+        <h2>Eventos Finalizados</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre de la Charla</th>
+                    <th>Institución</th>
+                    <th>Modalidad</th>
+                    <th>Fecha</th>
+                    <th>Likes</th>
+                    <th>Dislikes</th>
+                </tr>
+            </thead>
+            <tbody id="eventos-tbody">
+
+            </tbody>
+        </table>
+    </div>
+
+
+
+    <script>
+        function mostrarModal() {
+            document.getElementById("modal").style.display = "block";
+        }
+
+        function cerrarModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+    </script>
+</body>
+</html>

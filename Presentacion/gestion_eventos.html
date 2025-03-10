@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Eventos</title>
+    <link rel="stylesheet" href="styles/Gestion_eventos.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Eventos Chuno</div>
+        <nav>
+            <button class="nav-btn">Gestión</button>
+            <button class="nav-btn">Crear Conferencia</button>
+            <button class="nav-btn perfil">Perfil</button>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Gestión de Eventos</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>N°</th>
+                    <th>Nombre de la Charla</th>
+                    <th>Institución</th>
+                    <th>Modalidad</th>
+                    <th>Fecha</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Conferencia Internacional 2025</td>
+                    <td>Universidad Intercontinental</td>
+                    <td>Presencial</td>
+                    <td>09/11/2025</td>
+                    <td>
+                        <button class="btn eliminar" onclick="mostrarModal()">Eliminar</button>
+                        <button class="btn editar">Editar</button>
+                        <button class="btn finalizar">Finalizar</button>
+                    </td>
+                </tr>
+                <!-- Más filas pueden añadirse aquí -->
+            </tbody>
+        </table>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <p>¿Está seguro de eliminar este evento?</p>
+            <button class="btn eliminar">Eliminar</button>
+            <button class="btn cancelar" onclick="cerrarModal()">Cancelar</button>
+        </div>
+    </div>
+
+    <script>
+        function mostrarModal() {
+            document.getElementById("modal").style.display = "block";
+        }
+
+        function cerrarModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+    </script>
+</body>
+</html>

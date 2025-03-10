@@ -5,7 +5,7 @@ $controller = new CharlaController();
 $id = $_GET['id'] ?? null;
 
 if ($id && $controller->eliminar($id)) {
-    header("Location: charlas.php");
+    header("Location: index.php");
     exit();
 } else {
     echo "Error al eliminar la charla.";

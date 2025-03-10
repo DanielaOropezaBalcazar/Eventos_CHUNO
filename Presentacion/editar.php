@@ -202,6 +202,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <label for="Imagen" class="col-sm-3 col-form-label">Imagen actual:</label>
             <div class="col-sm-9">
                 <?php if ($charla['Imagen']): ?>
+                    
+
+                    
                     <img src="../uploads/<?php echo htmlspecialchars($charla['Imagen']); ?>" alt="Imagen de la charla" style="max-width: 200px;">
                 <?php else: ?>
                     <p>No hay imagen cargada.</p>

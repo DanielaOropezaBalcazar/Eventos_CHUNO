@@ -1,58 +1,53 @@
 <?php
+$servername = 'localhost';
+$username = 'root';
+$password = '';
+$database = 'eventos_chuno'; // verificar nombre de la base de datos
 
-// Definimos la clase Usuario
-class Usuario {
-    public $nombre;
-    public $correo;
-    private $password;
+$conn = new mysqli($servername, $username, $password, $database);
 
-    // Constructor
-    public function __construct($nombre, $correo, $password) {
-        $this->nombre = $nombre;
-        $this->correo = $correo;
-        $this->setPassword($password);
-    }
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : '';
+    $correo = isset($_POST['correo']) ? $_POST['correo'] : '';
+    $password = isset($_POST['password']) ? $_POST['password'] : '';
+    $confirm_password = isset($_POST['confirm_password']) ? $_POST['confirm_password'] : '';
 
-    // Método para establecer la contraseña (hash)
-    public function setPassword($password) {
-        $this->password = password_hash($password, PASSWORD_DEFAULT);
-    }
 
-    // Método para obtener la contraseña (solo para propósitos de prueba)
-    public function getPasswordHash() {
-        return $this->password;
-    }
-
-    // Método para mostrar datos (opcional)
-    public function mostrarDatos() {
-        return "Nombre: $this->nombre <br> Correo: $this->correo <br> Hash de la Contraseña: " . $this->password;
-    }
-}
-
-// Verificar si el formulario fue enviado
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nombre = trim($_POST["nombre"]);
-    $correo = trim($_POST["correo"]);
-    $password = $_POST["password"];
-    $confirm_password = $_POST["confirm_password"];
-
-    // Validaciones básicas
     if (empty($nombre) || empty($correo) || empty($password) || empty($confirm_password)) {
-        die("Error: Todos los campos son obligatorios.");
+        echo 'Todos los campos son obligatorios.';
+        exit;
     }
 
-    if (!filter_var($correo, FILTER_VALIDATE_EMAIL)) {
-        die("Error: El correo electrónico no es válido.");
-    }
-
+    // Validación de contraseñas
     if ($password !== $confirm_password) {
-        die("Error: Las contraseñas no coinciden.");
+        echo 'Las contraseñas no coinciden.';
+        exit;
     }
 
-    // Crear objeto Usuario
-    $usuario = new Usuario($nombre, $correo, $password);
+    // Validar que la contraseña tenga al menos 8 caracteres, al menos una mayúscula y al menos un número
+    if (!preg_match('/^(?=.[A-Z])(?=.\d).{8,}$/', $password)) {
+        echo 'La contraseña debe tener al menos 8 caracteres, una mayúscula y un número.';
+        exit;
+    }
 
-    // Mostrar los datos del usuario (solo para prueba)
-    echo $usuario->mostrarDatos();
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+    // Corregido el nombre de los campos en la tabla para que coincidan con la base de datos.
+    $stmt = $conn->prepare('INSERT INTO Orador (Nombre, Gmail, Contrasena) VALUES (?, ?, ?)');
+
+    // He añadido una calificación por defecto, por ejemplo, 0.00
+    // $calificacion = 0.00;
+
+    $stmt->bind_param('sss', $nombre, $correo, $hashed_password);
+
+    // Redirigir a la página de inicio después de un registro exitoso
+    if ($stmt->execute()) {
+        header("Location: ../Presentacion/inicio.php"); // CAMBIAR a inicio.php
+        exit;
+    } else {
+        echo 'Error al registrar el usuario: ' . $stmt->error;
+    }
+
+    $stmt->close();
+    $conn->close();
 }
-?>

@@ -1,6 +1,7 @@
 .custom-navbar {
     background-color: #461E1E !important;
     font-family: "Inter", sans-serif;
+    text-decoration: none;
 }
 
 .custom-navbar .navbar-brand {
@@ -37,16 +38,16 @@
 }
 
 .logo {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
 }
 
 .brand-text {
     display: block;
     line-height: 1.2;
-    margin-left: 10px;
+    margin-left: 5px;
     font-family: "Inter", sans-serif;
     color: white;
-    font-size: 25px;
+    font-size: 20px;
 }
 

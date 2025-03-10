@@ -8,7 +8,12 @@ class CharlaController {
     }
 
     public function listar() {
-        return $this->model->getAll();
+        try {
+            return $this->model->getAll();
+        } catch (\Throwable $th) {
+            echo "Problema al obtener la lista de charla";
+        }
+        
     }
 
     public function obtener($id) {

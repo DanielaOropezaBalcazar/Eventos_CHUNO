@@ -1,0 +1,21 @@
+
+.star{
+    color: #bbb;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+.star.checked {
+    color: gold;
+}
+
+.btn-seleccionado {
+    transform: scale(1.2); /* Aumenta el tamaño */
+    transition: transform 0.3s ease-in-out;
+}
+
+.btn-difuminado {
+    opacity: 0.5; /* Hace que el botón no seleccionado se vea atenuado */
+    transition: opacity 0.3s ease-in-out;
+}
+
