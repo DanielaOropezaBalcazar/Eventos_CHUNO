@@ -5,10 +5,6 @@ require 'mailer.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
-    for ($i=0; $i < total ; $i++) { 
-        
-    }
-
 
     // Recuperar datos del formulario
     $destinatario = $_POST['destinatario'];
