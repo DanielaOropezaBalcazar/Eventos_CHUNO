@@ -4,6 +4,7 @@ document.getElementById("inscripcionForm").addEventListener("submit", function(e
     const correoInscripcion = document.getElementById("correoInscripcion").value;
     const idCharla = document.getElementById("idCharla").value;
     
+    
 
 
     // Crear la solicitud AJAX
@@ -13,7 +14,7 @@ document.getElementById("inscripcionForm").addEventListener("submit", function(e
 
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
-            alert("Inscripción exitosa!");
+            alert("Inscripción exitosa!  " + idCharla);
             // Aquí podrías hacer alguna acción adicional, como redirigir al usuario
         }
     };
