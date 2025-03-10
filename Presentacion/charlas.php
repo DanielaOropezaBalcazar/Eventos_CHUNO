@@ -27,13 +27,13 @@ $charlas = $controller->listar();
                 <div class="col-12 col-sm-col-md-4 col-lg-3 mb-4">
                     <div class="card" style="border-radius: 20px">
                         <div class="ratio ratio-16x9">
-                            <img src="<?= $charla['LinkPresentacion'] ?>" class="img-fluid">
+                            <img src="uploads/<?= $charla['Imagen'] ?>" class="img-fluid">
                         </div>
                         <div class="card-body p-3">
                             <h4 clase="card-title p-2"><?= $charla['Nombre'] ?></h4>
                             <p><strong>Institución:</strong> <?= $charla['Institucion'] ?></p>
                             <p><strong>Fecha:</strong> <?= $charla['Fecha'] ?></p>
-                            <p><strong>Hora:</strong> <?= $charla['Hora'] ?></p>
+                            <p><strong>Hora:</strong> <?= date("H:i", strtotime($charla['Hora'])) ?></p>
                                 <div class="charla-actions">
                                     <a href="editar.php?id=<?= $charla['idCharla'] ?>" class="btn btn-primary">Editar</a>
                                     <a href="eliminar.php?id=<?= $charla['idCharla'] ?>" class="btn btn-danger" 
