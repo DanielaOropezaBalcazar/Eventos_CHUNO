@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario</title>
+    <link rel="stylesheet" href="styles/registro.page.css">
+
+</head>
+<body>
+    <div class="container">
+    <h2>Charlas</h2>
+    <form action="../logica_negocio/registro.php" method="POST">
+	<button type="submit" class="btn">Iniciar</button>
+	<button type="submit" class="btn">Perfil</button>
+        <label for="Nombre">Nombre de Charla:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="correo">Institución:</label>
+        <input type="institucion" id="institucion" name="correo" required>
+
+        <label for="date"></label>
+        <input type="date" required>
+
+        <label for="confirm_password">Coloca el código de la reunión:</label>
+        <input type="password" id="confirm_password" name="confirm_password" required>
+
+            <button type="submit" class="btn">Finalizar</button>
+        </form>
+    </div>
+</body>
+</html>
