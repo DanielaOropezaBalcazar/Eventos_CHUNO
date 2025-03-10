@@ -19,6 +19,8 @@ document.getElementById("inscripcionForm").addEventListener("submit", function(e
         }
     };
 
+    
+
     // Enviar los datos del formulario
     xhr.send("correoInscripcion=" + encodeURIComponent(correoInscripcion) + "&idCharla=" + encodeURIComponent(idCharla));
     
