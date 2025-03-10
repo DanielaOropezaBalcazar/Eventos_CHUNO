@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         try {
             // Insertar en la tabla Asistente
-            $queryAsistente = "INSERT INTO asistente (Gmail) VALUES (:correoInscripcion)";
+            $queryAsistente = "INSERT INTO asistente (Gmail) VALUES ($correoInscripcion)";
             $stmtAsistente = $conn->prepare($queryAsistente);
             $stmtAsistente->bindParam(':correoInscripcion', $correoInscripcion);
             $stmtAsistente->execute();
