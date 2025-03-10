@@ -41,5 +41,9 @@ class CharlaController {
     public function obtenerOradores() {
         return $this->model->getOradores();
     }
+
+    public function verificarOrador($idOrador) {
+        return $this->model->verificarOrador($idOrador);
+    }
 }
 ?>
